@@ -1,6 +1,6 @@
 {
-    "name": "nise-nabe/groonga-php",
-    "description": "groonga php client",
+    "name": "nise-nabe/groonga-http-php",
+    "description": "groonga php client usnig http server",
     "minimum-stability": "dev",
     "license": "",
     "authors": [
