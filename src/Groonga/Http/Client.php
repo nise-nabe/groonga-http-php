@@ -110,7 +110,7 @@ class Client
     $query->set('flags', $flags);
     $query->set('type', $type);
     if ($source !== null) {
-      $query->set('type', $source);
+      $query->set('source', $source);
     }
     $response = $request->send();
 
