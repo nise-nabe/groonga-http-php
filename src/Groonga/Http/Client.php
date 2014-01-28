@@ -2,6 +2,8 @@
 
 namespace Groonga\Http;
 
+use Groonga\Http\Message\GroongaRequestFactory;
+
 class Client
 {
   private $client;
@@ -11,6 +13,7 @@ class Client
    */
   public function __construct($url = 'http://localhost:10041') {
     $this->client = new \Guzzle\Http\Client($url);
+    $this->client->setRequestFactory(new GroongaRequestFactory());
   }
 
   /**
