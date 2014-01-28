@@ -84,7 +84,7 @@ class Client
     $query = $request->getQuery();
     $query->set('table', $table);
     foreach ($params as $k => $v) {
-      $request->set($k, $v);
+      $query->set($k, $v);
     }
     $response = $request->send();
 
@@ -163,7 +163,7 @@ class Client
     $query->set('table', $table);
     $query->set('values', $values);
     foreach ($params as $k => $v) {
-      $request->set($k, $v);
+      $query->set($k, $v);
     }
 
     $response = $request->send();
