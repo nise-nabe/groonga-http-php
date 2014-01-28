@@ -99,8 +99,8 @@ class Client
    *
    * @see http://groonga.org/ja/docs/reference/commands/column_create.html
    */
-  public function craateColumn($table, $name, $flags, $type, $source = null) {
-    $request = $this->client->get('/d/create_column.json');
+  public function columnCreate($table, $name, $flags, $type, $source = null) {
+    $request = $this->client->get('/d/column_create.json');
     $query = $request->getQuery();
     $query->set('table', $table);
     $query->set('name', $name);
