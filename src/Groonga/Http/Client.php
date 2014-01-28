@@ -146,4 +146,28 @@ class Client
 
     return json_decode($response->getBody());
   }
+
+  /**
+   * [columns [ifexists [input_type]]]
+   *
+   * @param $table
+   * @param $values
+   * @param array $params
+   * @return mixed
+   *
+   * @see http://groonga.org/ja/docs/reference/commands/load.html
+   */
+  public function load($table, $values, $params = array()) {
+    $request = $this->client->get('/d/load.json');
+    $query = $request->getQuery();
+    $query->set('table', $table);
+    $query->set('values', $values);
+    foreach ($params as $k => $v) {
+      $request->set($k, $v);
+    }
+
+    $response = $request->send();
+
+    return json_decode($response->getBody());
+  }
 }
