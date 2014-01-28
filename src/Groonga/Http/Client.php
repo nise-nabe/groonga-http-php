@@ -40,9 +40,10 @@ class Client
    */
   public function tableCreate($name, $params) {
     $request = $this->client->get('/d/table_create.json');
-    $request->set('name', $name);
+    $query = $request->getQuery();
+    $query->set('name', $name);
     foreach ($params as $k => $v) {
-      $request->set($k, $v);
+      $query->set($k, $v);
     }
     $response = $request->send();
 
@@ -77,7 +78,8 @@ class Client
    */
   public function select($table, $params) {
     $request = $this->client->get('/d/select.json');
-    $request->set('table', $table);
+    $query = $request->getQuery();
+    $query->set('table', $table);
     foreach ($params as $k => $v) {
       $request->set($k, $v);
     }
@@ -99,12 +101,13 @@ class Client
    */
   public function craateColumn($table, $name, $flags, $type, $source = null) {
     $request = $this->client->get('/d/create_column.json');
-    $request->set('table', $table);
-    $request->set('name', $name);
-    $request->set('flags', $flags);
-    $request->set('type', $type);
+    $query = $request->getQuery();
+    $query->set('table', $table);
+    $query->set('name', $name);
+    $query->set('flags', $flags);
+    $query->set('type', $type);
     if ($source !== null) {
-      $request->set('type', $source);
+      $query->set('type', $source);
     }
     $response = $request->send();
 
@@ -119,7 +122,8 @@ class Client
    */
   public function truncate($table) {
     $request = $this->client->get('/d/truncate.json');
-    $request->set('table', $table);
+    $query = $request->getQuery();
+    $query->set('table', $table);
     $response = $request->send();
 
     return json_decode($response->getBody());
