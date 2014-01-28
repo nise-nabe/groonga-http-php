@@ -79,7 +79,7 @@ class Client
    *
    * @see http://groonga.org/ja/docs/reference/commands/select.html
    */
-  public function select($table, $params) {
+  public function select($table, $params = array()) {
     $request = $this->client->get('/d/select.json');
     $query = $request->getQuery();
     $query->set('table', $table);
