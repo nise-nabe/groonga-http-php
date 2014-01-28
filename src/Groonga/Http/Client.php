@@ -128,4 +128,19 @@ class Client
 
     return json_decode($response->getBody());
   }
+
+  /**
+   * @param $table
+   * @return mixed
+   *
+   * @see http://groonga.org/ja/docs/reference/commands/table_remove.html
+   */
+  public function tableRemove($table) {
+    $request = $this->client->get('/d/table_remove.json');
+    $query = $request->getQuery();
+    $query->set('table', $table);
+    $response = $request->send();
+
+    return json_decode($response->getBody());
+  }
 }
