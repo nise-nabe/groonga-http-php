@@ -170,4 +170,16 @@ class Client
 
     return json_decode($response->getBody());
   }
+
+  /**
+   * @return mixed
+   *
+   * @see http://groonga.org/ja/docs/reference/commands/table_list.html
+   */
+  public function tableList() {
+    $request = $this->client->get('/d/table_list.json');
+    $response = $request->send();
+
+    return json_decode($response->getBody());
+  }
 }

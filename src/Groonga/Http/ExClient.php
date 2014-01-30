@@ -38,4 +38,33 @@ class ExClient extends \Groonga\Http\Client
 
     return $result;
   }
+
+  /**
+   * modified return value
+   *   array(
+   *     array(
+   *       $columnName => $data,
+   *       ...
+   *     )
+   *   )
+   *
+   * @return array
+   *
+   * @see \Groonga\Http\Client#tableList()
+   */
+  public function tableList() {
+    $data = parent::tableList();
+
+    $result = array();
+    $columns = array_shift($data[1]);
+    foreach ($data[1] as $d) {
+      $r = array();
+      foreach ($columns as $i => $column) {
+        $r[$column[0]] = $d[$i];
+      }
+      $result[] = $r;
+    }
+
+    return $result;
+  }
 }
