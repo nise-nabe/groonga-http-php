@@ -245,6 +245,23 @@ class Client
     $response = $request->send();
 
     return json_decode($response->getBody());
+  }
 
+  /**
+   * @param $table
+   * @param $name
+   * @return mixed
+   *
+   * @see http://groonga.org/ja/docs/reference/commands/column_remove.html
+   */
+  public function columnRemove($table, $name) {
+    $request = $this->client->get('/d/column_remove.json');
+    $query = $request->getQuery();
+    $query->set('table', $table);
+    $query->set('name', $name);
+
+    $response = $request->send();
+
+    return json_decode($response->getBody());
   }
 }

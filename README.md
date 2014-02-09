@@ -12,7 +12,7 @@ Groonga の HTTP サーバへのリクエストを PHP から行えるように�
 | clearlock       |            |
 | column_create   | o          |
 | column_list     | o          |
-| column_remove   |            |
+| column_remove   | o          |
 | column_rename   |            |
 | define_selector |            |
 | defrag          |            |
