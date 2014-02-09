@@ -230,4 +230,21 @@ class Client
 
     return json_decode($response->getBody());
   }
+
+  /**
+   * @param $table
+   * @return mixed
+   *
+   * @see http://groonga.org/ja/docs/reference/commands/column_list.html
+   */
+  public function columnList($table) {
+    $request = $this->client->get('/d/column_list.json');
+    $query = $request->getQuery();
+    $query->set('table', $table);
+
+    $response = $request->send();
+
+    return json_decode($response->getBody());
+
+  }
 }
