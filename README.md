@@ -22,7 +22,7 @@ Groonga の HTTP サーバへのリクエストを PHP から行えるように�
 | log_level       |            |
 | log_put         |            |
 | log_reopen      |            |
-| normalize       |            |
+| normalize       | o          |
 | quit            |            |
 | register        |            |
 | ruby_eval       |            |
