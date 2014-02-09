@@ -34,5 +34,5 @@ Groonga の HTTP サーバへのリクエストを PHP から行えるように�
 | table_create    | o          |
 | table_list      | o          |
 | table_remove    | o          |
-| tokenize        |            |
+| tokenize        | o          |
 | truncate        | o          |
