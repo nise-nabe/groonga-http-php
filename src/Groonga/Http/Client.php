@@ -207,4 +207,25 @@ class Client
 
     return json_decode($response->getBody());
   }
+
+  /**
+   * @param $normalizer
+   * @param $string
+   * @param array $params
+   *
+   * @return mixed
+   */
+  public function normalize($normalizer, $string, $params = array()) {
+    $request = $this->client->get('/d/normalize.json');
+    $query = $request->getQuery();
+    $query->set('normalizer', $normalizer);
+    $query->set('string', $string);
+    foreach ($params as $k => $v) {
+      $query->set($k, $v);
+    }
+
+    $response = $request->send();
+
+    return json_decode($response->getBody());
+  }
 }
