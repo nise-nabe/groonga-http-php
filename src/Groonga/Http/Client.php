@@ -214,6 +214,8 @@ class Client
    * @param array $params
    *
    * @return mixed
+   *
+   * @see http://groonga.org/ja/docs/reference/commands/normalize.html
    */
   public function normalize($normalizer, $string, $params = array()) {
     $request = $this->client->get('/d/normalize.json');
