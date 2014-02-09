@@ -182,4 +182,29 @@ class Client
 
     return json_decode($response->getBody());
   }
+
+  /**
+   *  [normalizer=null]
+   *  [flags=NONE]
+   *
+   * @param string $tokenizer
+   * @param string $string
+   * @param array $params
+   * @return mixed
+   *
+   * @see http://groonga.org/ja/docs/reference/commands/tokenizer.html
+   */
+  public function tokenize($tokenizer, $string, $params = array()) {
+    $request = $this->client->get('/d/tokenize.json');
+    $query = $request->getQuery();
+    $query->set('tokenizer', $tokenizer);
+    $query->set('string', $string);
+    foreach ($params as $k => $v) {
+      $query->set($k, $v);
+    }
+
+    $response = $request->send();
+
+    return json_decode($response->getBody());
+  }
 }
