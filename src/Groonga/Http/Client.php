@@ -264,4 +264,26 @@ class Client
 
     return json_decode($response->getBody());
   }
+
+  /**
+   * ドキュメントと引き数が少し違うがソースを読む限り２つ引き数を取る。
+   *
+   * @param $table
+   * @param $name
+   * @param $newName
+   * @return mixed
+   *
+   * @see http://groonga.org/ja/docs/reference/commands/column_rename.html
+   */
+  public function columnRename($table, $name, $newName) {
+    $request = $this->client->get('/d/column_rename.json');
+    $query = $request->getQuery();
+    $query->set('table', $table);
+    $query->set('name', $name);
+    $query->set('new_name', $newName);
+
+    $response = $request->send();
+
+    return json_decode($response->getBody());
+  }
 }
