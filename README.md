@@ -5,6 +5,8 @@ Groonga の HTTP サーバへのリクエストを PHP から行えるように�
 
 ### コマンド対応表
 
+[http://groonga.org/ja/docs/reference/command.html](http://groonga.org/ja/docs/reference/command.html)
+
 | コマンド        | 実装済みか |
 |-----------------|------------|
 | cache_limit     |            |
