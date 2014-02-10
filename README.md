@@ -13,7 +13,7 @@ Groonga の HTTP サーバへのリクエストを PHP から行えるように�
 | column_create   | o          |
 | column_list     | o          |
 | column_remove   | o          |
-| column_rename   |            |
+| column_rename   | o          |
 | define_selector |            |
 | defrag          |            |
 | delete          |            |
