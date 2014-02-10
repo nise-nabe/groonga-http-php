@@ -2,7 +2,7 @@
     "name": "nise-nabe/groonga-http-php",
     "description": "groonga php client usnig http server",
     "minimum-stability": "dev",
-    "license": "",
+    "license": "MIT License",
     "authors": [
         {
             "name": "nise_nabe",
