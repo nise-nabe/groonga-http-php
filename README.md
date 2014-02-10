@@ -16,7 +16,7 @@ Groonga の HTTP サーバへのリクエストを PHP から行えるように�
 | column_rename   | o          |
 | define_selector |            |
 | defrag          |            |
-| delete          |            |
+| delete          | o          |
 | dump            |            |
 | load            | o          |
 | log_level       |            |

@@ -286,4 +286,26 @@ class Client
 
     return json_decode($response->getBody());
   }
+
+  /**
+   * [key [id [filter]]]
+   *
+   * @param $table
+   * @param array $params
+   * @return mixed
+   *
+   * @see http://groonga.org/ja/docs/reference/commands/delete.html
+   */
+  public function delete($table, $params = array()) {
+    $request = $this->client->get('/d/delete.json');
+    $query = $request->getQuery();
+    $query->set('table', $table);
+    foreach ($params as $k => $v) {
+      $query->set($k, $v);
+    }
+
+    $response = $request->send();
+
+    return json_decode($response->getBody());
+  }
 }
